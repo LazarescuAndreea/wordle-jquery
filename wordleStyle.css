@@ -1,0 +1,34 @@
+.letter {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #3a3a3c;
+    height: 52px;
+    width: 52px;
+    margin: 2.5px;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #f8f8f8;
+}
+
+.wordRow {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.successMessage {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: #f8f8f8;
+}
+
+body {
+    background-color: #121213;
+}
