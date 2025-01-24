@@ -1,14 +1,22 @@
 // CONSTANTS
-const WORD_LIST = ["ghoul", "warty", "slime", "tribe", "lover", "kayak", "mouse", "bride", "brave", "diner"];
 const GREEN = '#538d4e';
 const ORANGE = '#b59f3b';
 const GREY = '#3a3a3c';
 const MAX_GUESSES = 6;
 const MAX_LETTERS = 5;
+const WORD_LANGUAGE = 'en'; // can be the following: en -> English, sp -> Spanish, it -> Italian, de -> German, fr -> French, zh -> Chinese
+const FETCH_LINK = 'https://random-word-api.herokuapp.com/word?length=' + MAX_LETTERS + '&lang=' + WORD_LANGUAGE;
 
 // GLOBAL VARS
 let submissionCounter = 0;
-const sessionRandomWord = wordRandomizer();
+let sessionRandomWord;
+
+$.ajax({
+    url: FETCH_LINK,
+    success: function(data) {
+        sessionRandomWord = data[0];
+    }
+}); 
 
 function wordRandomizer() {
     return WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
